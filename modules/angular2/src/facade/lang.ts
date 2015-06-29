@@ -206,7 +206,7 @@ export class RegExpWrapper {
     flags = flags.replace(/g/g, '');
     return new _global.RegExp(regExpStr, flags + 'g');
   }
-  static firstMatch(regExp: RegExp, input: string): List<string> {
+  static firstMatch(regExp: RegExp, input: string): RegExpExecArray {
     // Reset multimatch regex state
     regExp.lastIndex = 0;
     return regExp.exec(input);
