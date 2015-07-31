@@ -9,11 +9,11 @@ export function getTypeNameForDebugging(type: Type): string {
   return type['name'];
 }
 
-export class BaseException extends Error {
+export class BaseException implements Error {
+  public name: string;
   stack;
   constructor(public message?: string, private _originalException?, private _originalStack?,
               private _context?) {
-    super(message);
     this.stack = (<any>new Error(message)).stack;
   }
 
