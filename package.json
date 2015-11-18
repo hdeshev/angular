@@ -24,8 +24,8 @@
   },
   "scripts": {
     "preinstall": "node tools/analytics/build-analytics start install npm-install && node tools/analytics/build-analytics start install npm-preinstall && node tools/npm/check-node-modules --purge && node tools/analytics/build-analytics success install npm-preinstall && node tools/analytics/build-analytics start install npm-install-net",
-    "postinstall": "node tools/analytics/build-analytics success install npm-install-net && node tools/analytics/build-analytics start install npm-postinstall && node tools/npm/copy-npm-shrinkwrap && node tools/chromedriverpatch.js && webdriver-manager update && bower install && gulp pubget.dart && tsd reinstall --overwrite --clean --config modules/angular2/tsd.json && tsd reinstall --overwrite --clean --config tools/tsd.json && tsd reinstall --overwrite --config modules/angular1_router/tsd.json && node tools/analytics/build-analytics success install npm-postinstall && node tools/analytics/build-analytics success install npm-install",
-    "test": "gulp test.all.js && gulp test.all.dart"
+    "postinstall": "node tools/analytics/build-analytics success install npm-install-net && node tools/analytics/build-analytics start install npm-postinstall && node tools/npm/copy-npm-shrinkwrap && node tools/chromedriverpatch.js && webdriver-manager update && bower install && tsd reinstall --overwrite --clean --config modules/angular2/tsd.json && tsd reinstall --overwrite --clean --config tools/tsd.json && tsd reinstall --overwrite --config modules/angular1_router/tsd.json && node tools/analytics/build-analytics success install npm-postinstall && node tools/analytics/build-analytics success install npm-install",
+    "test": "gulp test.all.js"
   },
   "dependencies": {
     "@reactivex/rxjs": "5.0.0-alpha.7",
@@ -77,7 +77,6 @@
     "karma": "^0.13.10",
     "karma-browserstack-launcher": "mlaval/karma-browserstack-launcher#global_poll",
     "karma-chrome-launcher": "^0.2.0",
-    "karma-dart": "^0.3.0",
     "karma-jasmine": "^0.3.6",
     "karma-sauce-launcher": "^0.2.14",
     "lodash": "^2.4.1",
@@ -105,7 +104,6 @@
     "systemjs": "0.18.10",
     "systemjs-builder": "^0.10.3",
     "through2": "^0.6.5",
-    "ts2dart": "^0.7.14",
     "tsd": "^0.6.5-beta",
     "tslint": "^3.0.0-dev.1",
     "typescript": "^1.6.2",
