@@ -14,5 +14,13 @@
     "reflect-metadata": "<%= packageJson.dependencies['reflect-metadata'] %>",
     "rxjs": "<%= packageJson.dependencies['rxjs'] %>",
     "zone.js": "<%= packageJson.dependencies['zone.js'] %>"
-  }
+  },
+  "files": [
+    "**/*",
+    "!typings",
+    "!manual_typings",
+    "!test",
+    "!docs",
+    "!examples"
+  ]
 }
