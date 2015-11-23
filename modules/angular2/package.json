@@ -13,5 +13,13 @@
     "zone.js": "<%= packageJson.dependencies['zone.js'] %>"
   },
   "devDependencies": <%= JSON.stringify(packageJson.defaultDevDependencies) %>,
+  "files": [
+    "**/*",
+    "!typings",
+    "!manual_typings",
+    "!test",
+    "!docs",
+    "!examples"
+  ],
   "typings": "./angular2.d.ts"
 }
